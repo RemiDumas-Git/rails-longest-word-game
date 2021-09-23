@@ -1,0 +1,11 @@
+<h1>Result</h1>
+
+<% if @solution == "1"%>
+<p>Sorry but <strong><%= params[:answer] %></strong> does not seem to be a valid English word...</p>
+<% elsif @solution == "2" %>
+<p>Sorry but <strong><%= params[:answer] %></strong> can't be built out of <%= params[:letters].split.join(", ") %></p>
+<% else %>
+<p><strong>Congratulations!</strong> <%= params[:answer] %> is a valid English word!</p>
+<% end %>
+
+<%= link_to "Play Again!", new_path %>
